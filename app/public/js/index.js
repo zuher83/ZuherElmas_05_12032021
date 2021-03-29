@@ -2,6 +2,11 @@ const orinocoApi = {
   apiDatas: new apiDatas('http://localhost:3000/api/cameras/')
 };
 
+/**
+ * Permet d'instancier les classes selon les pages
+ *
+ * @return {Object}
+ */
 function definePage() {
   const searchParams = new URLSearchParams(
     document.location.search.substring(1)
