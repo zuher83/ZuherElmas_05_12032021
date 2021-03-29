@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Accueil | Orinoco</title>
+  <meta name="description"
+    content="Orinoco vous propose les meilleurs appareils photos du marché au meilleur prix avec un livraison express offerte">
+
+  <!--    Og Graph-->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zuher83.github.io/ZuherElmas_5_04032021">
+  <meta property="og:site_name" content="Orinoco" />
+  <meta property="og:title" content="Accueil | Orinoco">
+  <meta property="og:description"
+    content="Orinoco vous propose les meilleurs appareils photos du marché au meilleur prix avec un livraison express offerte" />
+  <meta property="og:image" content="https://zuher83.github.io/ZuherElmas_5_04032021/img/logo.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://zuher83.github.io/ZuherElmas_5_04032021">
+  <meta property="twitter:title" content="Accueil | Orinoco">
+  <meta property="twitter:description"
+    content="Orinoco vous propose les meilleurs appareils photos du marché au meilleur prix avec un livraison express offerte">
+  <meta property="twitter:image" content="https://zuher83.github.io/ZuherElmas_5_04032021/img/logo.png">
+
+  <!-- <link rel="shortcut icon" type="image/png" href="favicon.jpg"> -->
+  <link rel="canonical" href="https://zuher83.github.io/ZuherElmas_5_04032021">
+
+  <!-- Preconnect to CDNs -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+  <!-- local files -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/cart.js"></script>
+  <script src="js/product.js"></script>
+  <script src="js/api-connect.js"></script>
+  <script src="js/index.js" defer></script>
+
+</head>
+
+<body>
+  <%- include('../templates/navigation.html'); %>
+
+  <main>
+    <section class="shopping-cart section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 section-title">
+            <h2>Votre panier</h2>
+          </div>
+        </div>
+        <div class="row product-view" id="product-view">
+          <div class="col-12">
+            <!-- Shopping Summery -->
+            <table class="table shopping-summery">
+              <thead>
+                <tr class="main-hading">
+                  <th>PRODUIT</th>
+                  <th>DESCRIPTION</th>
+                  <th class="text-center">PRIX</th>
+                  <th class="text-center">QUANTITE</th>
+                  <th class="text-center">TOTAL</th>
+                  <th class="text-center"><i class="ti-trash remove-icon"></i></th>
+                </tr>
+              </thead>
+              <tbody class="cart-table-line">
+                <tr>
+                  <td colspan="6">Votre panier est vide</td>
+                </tr>
+              </tbody>
+            </table>
+            <!--/ End Shopping Summery -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <!-- Total Amount -->
+            <div class="total-amount">
+              <div class="row">
+                <div class="col-lg-8 col-md-5 col-12">
+                  <div class="left">
+                    <div class="form-group form-check">
+                      <input class="form-check-input" name="news" id="delivery-cost" type="checkbox">
+                      <label class="checkbox-inline" for="delivery-cost">Livraison Express (+10€)
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-7 col-12">
+                  <div class="right">
+                    <ul>
+                      <li>Total<span class="order-subtotal">0.00 €</span></li>
+                      <li>Livraison<span class="delivery-cost">Offert</span></li>
+                      <li class="last">A Payer<span class="order-paid">0.00 €</span></li>
+                    </ul>
+                    <div class="button5">
+                      <a href="/" class="btn btn-success">Continuer mes achats</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--/ End Total Amount -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 register-form">
+            <div class="card p-5 mt-5">
+            <h2>Vos informations</h2>
+            <form id="customer-form">
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationFirstName">Prènom</label>
+                  <input type="text" class="form-control" id="validationFirstName" required>
+                  <div class="invalid-feedback" aria-hidden="true">
+                    Merci d'indiquer votre prènom!
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="validationName">Nom</label>
+                  <input type="text" class="form-control" id="validationName" required>
+                  <div class="invalid-feedback" aria-hidden="true">
+                    Merci d'indiquer votre nom!
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationRue">Rue</label>
+                  <input type="text" class="form-control" id="validationRue" aria-describedby="validationRueFeedback" required>
+                  <div id="validationRueFeedback" class="invalid-feedback">
+                    Merci d'indiquer une rue valide
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="validationVille">Ville</label>
+                  <input type="text" class="form-control" id="validationVille" aria-describedby="validationVilleFeedback" required>
+                  <div id="validationVilleFeedback" class="invalid-feedback">
+                    Merci d'indiquer une ville valide
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="validationCodePostal">Zip</label>
+                  <input type="text" class="form-control" id="validationCodePostal" aria-describedby="validationCodePostalFeedback">
+                  <div id="validationCodePostalFeedback" class="invalid-feedback">
+                    Indiquer un code postal valide
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label for="validatedInputEmail">Email</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" >@</span>
+                    </div>
+                    <input type="text" class="form-control" id="validatedInputEmail" aria-describedby="validatedInputEmail" required>
+
+                  </div>
+                  <div class="invalid-feedback">
+                    Merci d'indiquer un email valide
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="validatedInputEmailConfirmation">Confirmer Votre Email</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" >@</span>
+                    </div>
+                    <input type="text" class="form-control" id="validatedInputEmailConfirmation" aria-describedby="validatedInputEmailConfirmation" required>
+                  </div>
+                  <div class="invalid-feedback">
+                    Merci d'indiquer le même email que sur le champ précedent
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+                  <label class="form-check-label" for="invalidCheck3">
+                    J'accepte les conditions generales de vente
+                  </label>
+                  <div  id="invalidCheck3Feedback" class="invalid-feedback">
+                    Vous devez accepter les CGV.
+                  </div>
+                </div>
+              </div>
+              <button class="btn-primary btn" id="submit-order" type="submit">Confirmer ma commande</button>
+            </form>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <%- include('../templates/footer.html'); %>
+</body>
+
+</html>

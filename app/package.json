@@ -1,0 +1,28 @@
+{
+  "name": "AppMVP",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "buildTemplate": "node ./node_modules/gulp/bin/gulp.js makeTemplate",
+    "scss2css": "node ./node_modules/gulp/bin/gulp.js scss2css",
+    "watch": "concurrently \"node ../api/server\" \"node ./node_modules/gulp/bin/gulp.js watch\""
+  },
+  "author": "Zuher ELMAS",
+  "license": "",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "concurrently": "^6.0.0",
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-ejs": "^5.1.0",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^5.0.0",
+    "prettier": "^2.2.1"
+  }
+}
