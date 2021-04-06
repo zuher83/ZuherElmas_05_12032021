@@ -35,9 +35,8 @@ class apiDatas {
    */
   async productItem(productId) {
     if (productId !== null) {
-      let apiUrl = 'http://localhost:3000/api/cameras/';
-      let apiUrlProduct = apiUrl.concat('', productId);
-      let result = null;
+      const apiUrl = 'http://localhost:3000/api/cameras/';
+      const apiUrlProduct = apiUrl.concat('', productId);
       const productData = await fetch(apiUrlProduct);
       this.product = await productData.json();
 
